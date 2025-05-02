@@ -21,8 +21,8 @@ importers:
         specifier: ^6.2.5
         version: 6.19.7
       create-plasmic-app:
-        specifier: github:phucvarmeta/create-plasmic-app
-        version: https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6c776609c381bf53fb9570819043abe970994422
+        specifier: git://github.com/phucvarmeta/create-plasmic-app.git#0.0.1
+        version: https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6eea5564f65f74af00ac6e38f3e1f7ca4837d190
       nanoid:
         specifier: ^3.1.22
         version: 3.3.11
@@ -288,8 +288,8 @@ packages:
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  create-plasmic-app@https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6c776609c381bf53fb9570819043abe970994422:
-    resolution: {tarball: https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6c776609c381bf53fb9570819043abe970994422}
+  create-plasmic-app@https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6eea5564f65f74af00ac6e38f3e1f7ca4837d190:
+    resolution: {tarball: https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6eea5564f65f74af00ac6e38f3e1f7ca4837d190}
     version: 0.0.99
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1249,7 +1249,7 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  create-plasmic-app@https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6c776609c381bf53fb9570819043abe970994422:
+  create-plasmic-app@https://codeload.github.com/phucvarmeta/create-plasmic-app/tar.gz/6eea5564f65f74af00ac6e38f3e1f7ca4837d190:
     dependencies:
       '@plasmicapp/cli': https://codeload.github.com/phucvarmeta/plasmic-cli/tar.gz/04927c897d700aa281845e36d772739dc8d1d493
       '@sentry/node': 6.19.7
