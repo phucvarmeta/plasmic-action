@@ -32,6 +32,9 @@ importers:
       semver:
         specifier: ^7.4.0
         version: 7.7.1
+      tunnel:
+        specifier: ^0.0.6
+        version: 0.0.6
     devDependencies:
       '@types/node':
         specifier: ^14.14.37
