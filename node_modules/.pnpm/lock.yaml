@@ -23,6 +23,9 @@ importers:
       '@actions/io':
         specifier: ^1.1.3
         version: 1.1.3
+      '@plasmicapp/cli':
+        specifier: ^0.1.337
+        version: 0.1.337
       '@sentry/node':
         specifier: ^6.2.5
         version: 6.19.7
@@ -228,6 +231,11 @@ packages:
 
   '@plasmicapp/cli@0.1.187':
     resolution: {integrity: sha512-7fnVmFaFviNN1N/3Cj4+nknERYXicqEqLxtqdGhHQJIKgTk6XFGVCXhBw0dPpExIImXdZVJDt2rR4YIj6K9hNg==}
+    engines: {node: '>=12'}
+    hasBin: true
+
+  '@plasmicapp/cli@0.1.337':
+    resolution: {integrity: sha512-ZYwbYEUOd4MKjCz+bE72kHN0ETXGg7OmEOFkDqp0xdCyBBJVeYgiii9jQarBFTz6MDswXr4eu/zIW/XXbttgpg==}
     engines: {node: '>=12'}
     hasBin: true
 
@@ -1775,6 +1783,8 @@ snapshots:
       - debug
       - supports-color
       - utf-8-validate
+
+  '@plasmicapp/cli@0.1.337': {}
 
   '@plasmicapp/code-merger@0.0.33':
     dependencies:

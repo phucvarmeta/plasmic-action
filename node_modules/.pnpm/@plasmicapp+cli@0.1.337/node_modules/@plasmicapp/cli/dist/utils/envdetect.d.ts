@@ -1,0 +1,5 @@
+export declare function detectTypescript(): string | null;
+export declare function detectNextJs(): boolean;
+export declare function detectNextJsAppDir(): any;
+export declare function detectGatsby(): string | null;
+export declare function detectCreateReactApp(): boolean;
