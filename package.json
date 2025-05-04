@@ -41,7 +41,8 @@
     "nanoid": "^3.1.22",
     "semver": "^7.4.0",
     "tunnel": "^0.0.6",
-    "undici": "^7.8.0"
+    "undici": "^7.8.0",
+    "upath": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
