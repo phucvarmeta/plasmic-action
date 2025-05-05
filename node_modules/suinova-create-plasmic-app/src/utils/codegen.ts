@@ -4,7 +4,7 @@ import { installUpgrade } from "../utils/npm-utils";
 
 export async function installCodegenDeps(opts: { projectPath: string }) {
   const { projectPath } = opts;
-  return await installUpgrade("@plasmicapp/cli", { workingDir: projectPath });
+  return await installUpgrade("suinova-cli", { workingDir: projectPath });
 }
 
 export async function runCodegenSync(opts: {

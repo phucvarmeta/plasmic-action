@@ -166,7 +166,7 @@ export class PlasmicAction {
     if (newBranch) {
       await exec(`git checkout -B '${newBranch}'`, this.opts);
     }
-    await exec(`${pm.add} @plasmicapp/cli`, this.opts);
+    await exec(`${pm.add} suinova-cli`, this.opts);
     await exec(
       `${pm.cmd} plasmic sync --projects '${this.args.projectId}:${this.args.projectApiToken}' --yes`,
       this.opts

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { setMetadataEnv } from "@plasmicapp/cli";
+import { setMetadataEnv } from "suinova-cli";
 import * as Sentry from "@sentry/node";
 import * as fs from "fs";
 import inquirer, { DistinctQuestion } from "inquirer";
