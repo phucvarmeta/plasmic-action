@@ -1729,15 +1729,15 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
-suinova-cli@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.3.tgz"
-  integrity sha512-EPWw2fjQQUujNmLaySFFbUWqJjbuTgLNgabkLUMRLdLovHxVWswyOsQ8qSG0QReYzeCWgTO014G0r1DllqJzEQ==
+suinova-cli@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.4.tgz"
+  integrity sha512-6yYLiaFD3MGgfXvKpP9XBbPtmPKCeCgp0k4ZeWJYPdEdpkzA0xFkQ1WeyWG8G0YV7MK4MmJdnjB14xAwyOcoig==
 
-suinova-create-plasmic-app@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/suinova-create-plasmic-app/-/suinova-create-plasmic-app-0.0.7.tgz"
-  integrity sha512-lvySorEBzyEgH6wlomLOADCSBNh9yVJNtWVDalCQM6ulZyAEZ8fZFQVqKWT29RrjvKoa5keUTjLLQajElkg4tg==
+suinova-create-plasmic-app@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/suinova-create-plasmic-app/-/suinova-create-plasmic-app-0.0.8.tgz"
+  integrity sha512-uVXtEe2BAQHgHknhNXtGd4UZqwhP886OgEWEdr46jW/UI4WJzoJrwh5XwJAS8aXHvunr6D394TLbsGW5lI1/kQ==
   dependencies:
     "@sentry/node" "^6.2.2"
     chalk "^4.1.0"
@@ -1747,7 +1747,7 @@ suinova-create-plasmic-app@^0.0.7:
     inquirer "^8.0.0"
     lodash "^4.17.21"
     semver "^7.3.5"
-    suinova-cli "^0.0.3"
+    suinova-cli "^0.0.4"
     upath "^2.0.1"
     update-notifier "^5.1.0"
     validate-npm-package-name "^3.0.0"
