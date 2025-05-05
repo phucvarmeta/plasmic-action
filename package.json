@@ -37,12 +37,9 @@
     "@sentry/node": "^6.2.5",
     "@sentry/tracing": "^6.2.5",
     "chalk": "^5.4.1",
-    "create-plasmic-app": "^0.0.98",
     "nanoid": "^3.1.22",
     "semver": "^7.4.0",
-    "tunnel": "^0.0.6",
-    "undici": "^7.8.0",
-    "upath": "^2.0.1"
+    "suinova-create-plasmic-app": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
