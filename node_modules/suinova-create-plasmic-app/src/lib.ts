@@ -44,6 +44,7 @@ export async function create(args: CreatePlasmicAppArgs): Promise<void> {
     jsOrTs,
     template,
   } = args;
+  console.log("🚀 ~ create ~ resolvedProjectPath:", resolvedProjectPath);
   let { projectApiToken } = args;
   console.log("Let's get started! Here's what we'll do: ");
   console.log("1. Authenticate with Plasmic");

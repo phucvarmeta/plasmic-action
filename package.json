@@ -39,7 +39,7 @@
     "chalk": "^5.4.1",
     "nanoid": "^3.1.22",
     "semver": "^7.4.0",
-    "suinova-create-plasmic-app": "^0.0.3"
+    "suinova-create-plasmic-app": "^0.0.4"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
