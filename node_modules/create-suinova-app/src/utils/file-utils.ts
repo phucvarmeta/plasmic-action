@@ -76,6 +76,90 @@ export async function overwriteReadme(
   await fs.writeFile(readmeFile, contents);
 }
 
+// Function to extract the component name from renderModuleFilePath
+export function extractComponentName(renderModuleFilePath: string) {
+  const parts = renderModuleFilePath.split("/");
+  const filename = parts[parts.length - 1];
+  // Remove the extension and "Plasmic" prefix
+  return filename.replace(/\.tsx$/, "").replace(/^Plasmic/, "");
+}
+
+// Step 1: Extract routes from plasmic.json
+export async function extractRoutes(projectPath: string) {
+  const routes: {
+    componentName: string;
+    modulePath: string;
+    path: string;
+    importPath: string;
+  }[] = [];
+
+  const plasmicJsonPath = path.join(projectPath, "plasmic.json");
+  // Read the plasmic.json file
+  const plasmicJson = JSON.parse(await fs.readFile(plasmicJsonPath, "utf8"));
+
+  // Process all projects in the plasmic.json file
+  plasmicJson.projects.forEach((project: any) => {
+    if (project.components) {
+      project.components.forEach((component: any) => {
+        // Check if the component is a page with a path
+        if (component.componentType === "page" && component.path) {
+          routes.push({
+            path: component.path,
+            componentName: component.name,
+            importPath: extractComponentName(component.renderModuleFilePath),
+            modulePath:
+              component.importSpec?.modulePath || `${component.name}.tsx`,
+          });
+        }
+      });
+    }
+  });
+
+  return routes;
+}
+
+// Step 2: Generate routing code
+export async function generateRoutingCode(projectPath: string) {
+  const routes = await extractRoutes(projectPath);
+
+  // Generate import statements
+  const imports = routes
+    .map(
+      (route) =>
+        `import ${route.componentName} from "./components/${route.modulePath}";`
+    )
+    .join("\n");
+
+  // Generate route elements
+  const routeElements = routes
+    .map(
+      (route) =>
+        `        <Route path="${route.path}" element={<${route.componentName} />} />`
+    )
+    .join("\n");
+
+  // Generate the complete App.tsx code
+  const appCode = `import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+${imports}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+${routeElements}
+        {/* Add more routes here as needed */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+`;
+
+  const appPath = path.join(projectPath, "src", "App.tsx");
+  await fs.writeFile(appPath, appCode);
+}
+
 /**
  * Generate a file to render the component
  * @param componentAbsPath - absolute path to component to render

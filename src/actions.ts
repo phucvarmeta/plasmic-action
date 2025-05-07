@@ -7,7 +7,7 @@ import {
   mkPrBranchName,
   Outputs,
 } from "./util";
-import { create, setMetadata } from "suinova-create-plasmic-app";
+import { create, setMetadata } from "create-suinova-app";
 
 export type RunAction = "init" | "sync" | "build";
 export type Platform = "nextjs" | "gatsby" | "react" | "";

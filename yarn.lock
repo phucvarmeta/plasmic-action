@@ -574,6 +574,25 @@ core-util-is@~1.0.0:
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
+create-suinova-app@latest:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/create-suinova-app/-/create-suinova-app-0.0.1.tgz"
+  integrity sha512-8849JFws1Ef3imJ1+bO9GsZPKd53wCt1MlyC8Nt+CrCkZS5p3GjG6Mfx5Yn4kiOrv7Yowh20AS5qjdfPFWeHig==
+  dependencies:
+    "@sentry/node" "^6.2.2"
+    chalk "^4.1.0"
+    execa "^5.0.0"
+    findup-sync "^4.0.0"
+    glob "^7.1.6"
+    inquirer "^8.0.0"
+    lodash "^4.17.21"
+    semver "^7.3.5"
+    suinova-cli latest
+    upath "^2.0.1"
+    update-notifier "^5.1.0"
+    validate-npm-package-name "^3.0.0"
+    yargs "^16.2.0"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-5.1.0.tgz"
@@ -1729,29 +1748,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
-suinova-cli@^0.0.9, suinova-cli@latest:
+suinova-cli@latest:
   version "0.0.9"
   resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.9.tgz"
   integrity sha512-j+iUjOa0iCDNx5MybTF4mjGKIrmaqTwPWLVZiDfpnF7BbJhgGzgWmd1oK1ktLsrawzdv71v2wJ9tgCND41x5dQ==
-
-suinova-create-plasmic-app@latest:
-  version "0.0.14"
-  resolved "https://registry.npmjs.org/suinova-create-plasmic-app/-/suinova-create-plasmic-app-0.0.14.tgz"
-  integrity sha512-R2ooKNH53LiIYXqtxS6p0/KW5+hkHvs53rx9GTBUyvPG+/FOmzicg4WMtq7APUKlUpcI92AXb4nujeyviAOKYQ==
-  dependencies:
-    "@sentry/node" "^6.2.2"
-    chalk "^4.1.0"
-    execa "^5.0.0"
-    findup-sync "^4.0.0"
-    glob "^7.1.6"
-    inquirer "^8.0.0"
-    lodash "^4.17.21"
-    semver "^7.3.5"
-    suinova-cli "^0.0.9"
-    upath "^2.0.1"
-    update-notifier "^5.1.0"
-    validate-npm-package-name "^3.0.0"
-    yargs "^16.2.0"
 
 supports-color@^7.1.0:
   version "7.2.0"

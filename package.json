@@ -42,7 +42,7 @@
     "semver": "^7.4.0",
     "socket.io-client": "^4.8.1",
     "suinova-cli": "latest",
-    "suinova-create-plasmic-app": "latest",
+    "create-suinova-app": "latest",
     "utility-types": "^3.11.0",
     "winston": "^3.17.0"
   },
