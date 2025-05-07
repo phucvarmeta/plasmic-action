@@ -1729,12 +1729,12 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
-suinova-cli@^0.0.9:
+suinova-cli@^0.0.9, suinova-cli@latest:
   version "0.0.9"
   resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.9.tgz"
   integrity sha512-j+iUjOa0iCDNx5MybTF4mjGKIrmaqTwPWLVZiDfpnF7BbJhgGzgWmd1oK1ktLsrawzdv71v2wJ9tgCND41x5dQ==
 
-suinova-create-plasmic-app@^0.0.14:
+suinova-create-plasmic-app@latest:
   version "0.0.14"
   resolved "https://registry.npmjs.org/suinova-create-plasmic-app/-/suinova-create-plasmic-app-0.0.14.tgz"
   integrity sha512-R2ooKNH53LiIYXqtxS6p0/KW5+hkHvs53rx9GTBUyvPG+/FOmzicg4WMtq7APUKlUpcI92AXb4nujeyviAOKYQ==
