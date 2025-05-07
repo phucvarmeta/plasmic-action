@@ -1,0 +1,18 @@
+export interface MockProject {
+    projectId: string;
+    branchName: string;
+    projectApiToken: string;
+    version: string;
+    projectName: string;
+    components: MockComponent[];
+    dependencies: {
+        [projectId: string]: string;
+    };
+}
+export interface MockComponent {
+    id: string;
+    name: string;
+    projectId?: string;
+    branchName?: string;
+    version?: string;
+}

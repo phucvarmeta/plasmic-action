@@ -1,0 +1,7 @@
+import { CommonArgs } from "..";
+import { ChecksumBundle, IconBundle } from "../api";
+import { PlasmicContext } from "../utils/config-utils";
+export interface SyncIconsArgs extends CommonArgs {
+    projects: readonly string[];
+}
+export declare function syncProjectIconAssets(context: PlasmicContext, projectId: string, branchName: string, version: string, iconBundles: IconBundle[], checksums: ChecksumBundle, baseDir: string): Promise<void>;

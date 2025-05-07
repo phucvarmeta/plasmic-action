@@ -1,0 +1,129 @@
+name: Sync, build and deploy Plasmic app
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform (nextjs, gatsby, or react)'
+        required: true
+        default: 'nextjs'
+      scheme:
+        description: 'Scheme (codegen or loader)'
+        required: true
+        default: 'codegen'
+      projectId:
+        description: 'Plasmic Project ID'
+        required: true
+      projectApiToken:
+        description: 'Plasmic Project API Token'
+        required: true
+      branch:
+        description: 'Target branch'
+        required: true
+        default: 'main'
+      directory:
+        description: 'Project directory'
+        required: false
+        default: '.'
+      language:
+        description: 'Language (js or ts)'
+        required: false
+        default: 'ts'
+      syncAction:
+        description: 'Sync action (commit or pr)'
+        required: false
+        default: 'commit'
+      publish:
+        description: 'Whether to publish after build'
+        required: false
+        default: 'false'
+      commitMessage:
+        description: 'Commit message (title and description)'
+        required: false
+        default: 'Update from Plasmic'
+
+jobs:
+  job:
+    name: Sync, build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checking out repository...
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - id: node
+        name: Setting up node v18...
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - id: cache
+        name: Recovering cache...
+        uses: actions/cache@v4
+        with:
+          key: lock-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
+          path: ${{ github.event.client_payload.data.directory || '.' }}/node_modules
+#      - id: create_plasmic_config
+#        name: Creating Plasmic configuration file...
+#        run: |
+#          mkdir -p ${{ github.event.client_payload.data.directory || '.' }}
+#          cat > ${{ github.event.client_payload.data.directory || '.' }}/plasmic.json << 'EOL'
+#          {
+#            "host": "https://suinova.var-meta.com",
+#            "projects": []
+#          }
+#          EOL
+#          echo "Created plasmic.json with custom configuration"
+      - id: init
+        name: Initializing Plasmic app...
+        uses: phucvarmeta/plasmic-action@v1.0.0
+        with:
+          run: init
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.client_payload.data.branch || 'main' }}
+          directory: ${{ github.event.client_payload.data.directory || '.' }}
+          project_id: ${{ github.event.client_payload.data.projectId }}
+          project_api_token: ${{ github.event.client_payload.data.projectApiToken }}
+          platform: ${{ github.event.client_payload.data.platform || 'nextjs' }}
+          language: ${{ github.event.client_payload.data.language || 'ts' }}
+          scheme: ${{ github.event.client_payload.data.scheme || 'codegen' }}
+          title: ${{ github.event.client_payload.data.commitMessage || 'Update from Plasmic' }}
+          description: ${{ github.event.client_payload.data.commitMessage || 'Update from Plasmic' }}
+      - id: sync
+        name: Syncing Plasmic project...
+        if: ${{ github.event.client_payload.data.scheme == 'codegen' && steps.init.outputs.synced != 'true' }}
+        uses: phucvarmeta/plasmic-action@v1.0.0
+        with:
+          run: sync
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.event.client_payload.data.branch || 'main' }}
+          directory: ${{ github.event.client_payload.data.directory || '.' }}
+          project_id: ${{ github.event.client_payload.data.projectId }}
+          project_api_token: ${{ github.event.client_payload.data.projectApiToken }}
+          sync_action: ${{ github.event.client_payload.data.syncAction || 'commit' }}
+          title: ${{ github.event.client_payload.data.commitMessage || 'Update from Plasmic' }}
+          description: ${{ github.event.client_payload.data.commitMessage || 'Update from Plasmic' }}
+      - id: build
+        name: Building Plasmic app...
+        if: ${{ github.event.client_payload.data.publish == 'true' }}
+        uses: phucvarmeta/plasmic-action@v1.0.0
+        with:
+          run: build
+          branch: ${{ github.event.client_payload.data.branch || 'main' }}
+          directory: ${{ github.event.client_payload.data.directory || '.' }}
+          platform: ${{ github.event.client_payload.data.platform || 'nextjs' }}
+      - id: pr
+        name: Creating pull request...
+        uses: repo-sync/pull-request@v2
+        if: ${{ steps.sync.outputs.new_branch }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ steps.sync.outputs.new_branch }}
+          destination_branch: ${{ github.event.client_payload.data.branch || 'main' }} 

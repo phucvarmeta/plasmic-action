@@ -1,0 +1,8 @@
+export type AuthArgs = {
+    host: string;
+    baseDir?: string;
+    check?: boolean;
+    email?: boolean;
+};
+export declare function checkCredentials(): Promise<void>;
+export declare function auth(args: AuthArgs): Promise<string | void>;

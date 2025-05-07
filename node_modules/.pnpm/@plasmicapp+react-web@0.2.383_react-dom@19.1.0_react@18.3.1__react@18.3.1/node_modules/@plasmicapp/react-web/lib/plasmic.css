@@ -1,0 +1,72 @@
+:where(.__wab_flex-container),
+:where(.ρfc) {
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  pointer-events: none;
+}
+
+:where(.__wab_flex-container > *),
+:where(.ρfc > *) {
+  pointer-events: auto;
+}
+
+:where(.__wab_slot),
+:where(.ρs) {
+  display: contents;
+}
+
+:where(.__wab_slot-string-wrapper),
+:where(.ρsw) {
+  position: relative;
+}
+
+:where(.__wab_passthrough) {
+  display: contents;
+}
+
+:where(.__wab_img-wrapper) {
+  position: relative;
+  display: inherit;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+:where(.__wab_slot > .__wab_img-wrapper),
+:where(.ρs > .__wab_img-wrapper) {
+  display: block;
+}
+
+:where(.__wab_passthrough > .__wab_img-wrapper) {
+  display: block;
+}
+
+:where(.__wab_img-spacer-svg) {
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+:where(.__wab_img) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+:where(.__wab_picture) {
+  display: contents;
+}

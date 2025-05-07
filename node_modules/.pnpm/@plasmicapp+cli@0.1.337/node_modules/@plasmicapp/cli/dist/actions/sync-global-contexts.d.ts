@@ -1,0 +1,5 @@
+import { ChecksumBundle, ProjectMetaBundle } from "../api";
+import { PlasmicContext, ProjectConfig, ProjectLock } from "../utils/config-utils";
+export declare const DEFAULT_GLOBAL_CONTEXTS_NAME = "PlasmicGlobalContextsProvider";
+export declare function syncGlobalContexts(context: PlasmicContext, projectMeta: ProjectMetaBundle, projectConfig: ProjectConfig, projectLock: ProjectLock, checksums: ChecksumBundle, baseDir: string): Promise<void>;
+export declare function getGlobalContextsResourcePath(context: PlasmicContext, projectConfig: ProjectConfig): string;

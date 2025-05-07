@@ -101,6 +101,7 @@ export class PlasmicAction {
       source: "plasmic-action",
     });
     const relTmpDir = "tmp-cpa";
+    process.env.PLASMIC_HOST = "https://suinova.var-meta.com";
     await create({
       resolvedProjectPath: path.resolve(this.opts.cwd, relTmpDir),
       projectId: this.args.projectId,
@@ -168,7 +169,7 @@ export class PlasmicAction {
     }
     await exec(`${pm.add} @plasmicapp/cli`, this.opts);
     await exec(
-      `${pm.cmd} plasmic sync --projects '${this.args.projectId}:${this.args.projectApiToken}' --yes`,
+      `${pm.cmd} plasmic sync --projects '${this.args.projectId}:${this.args.projectApiToken}' --host 'https://suinova.var-meta.com' --yes`,
       this.opts
     );
     return (await this.commit(newBranch || this.args.branch))

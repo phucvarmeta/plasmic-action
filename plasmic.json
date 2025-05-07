@@ -1,4 +1,11 @@
 {
   "host": "https://suinova.var-meta.com",
-  "projects": []
-} 
+  "$schema": "https://unpkg.com/@suinovaapp/cli@0.1.337/dist/plasmic.schema.json",
+  "projects": [
+    {
+      "projectId": "8hYGBtFU2JYVD1YnAT94HQ",
+      "projectApiToken": "wTUnm5rucvjBcnM5i1P6bsoj2cFsjiYX0aRPZNRaEKKi7h6A013UNPInXmRyDEJ6IaBuvCll1WIGjTJc6eg"
+    }
+  ]
+}
+

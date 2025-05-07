@@ -1,0 +1,3 @@
+type StringGen = string | (() => string);
+export declare function ensure<T>(x: T | null | undefined, msg?: StringGen): T;
+export {};
