@@ -574,10 +574,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-create-suinova-app@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.npmjs.org/create-suinova-app/-/create-suinova-app-0.0.13.tgz"
-  integrity sha512-zEOe8V+QP+LpItv/LwcjNJgB277Ql98dAbn5VqQzoBakKCu6xDlt8RQyIrWbMAIlbNWNcc4SV5tsUwD7SnwwcQ==
+create-suinova-app@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.npmjs.org/create-suinova-app/-/create-suinova-app-0.0.14.tgz"
+  integrity sha512-Wp0p4zg13bX89t0QPE+2MBap4lZ1pY2f8ZlWr4SPFuqEOlYMOQcm04GVyQ/hafBej+42DJMtGkoAYydN+eb5bQ==
   dependencies:
     "@sentry/node" "^6.2.2"
     chalk "^4.1.0"
