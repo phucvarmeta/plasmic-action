@@ -52,7 +52,7 @@ yargs
   })
   .command<InitArgs>(
     "init",
-    "Initializes Plasmic for a project.",
+    "Initializes SuiNova for a project.",
     (yags) => {
       yags
         .option("enable-skip-auth", {
@@ -84,11 +84,11 @@ yargs
   )
   .command<auth.AuthArgs>(
     "auth",
-    "Authenticates you to plasmic.",
+    "Authenticates you to SuiNova.",
     (yags) => {
       yags
         .option("host", {
-          describe: "Plasmic host to use",
+          describe: "SuiNova host to use",
           type: "string",
           default: HARDCODED_HOST,
         })
@@ -109,7 +109,7 @@ yargs
   )
   .command<SyncArgs>(
     "sync",
-    "Syncs designs from Plasmic to local files.",
+    "Syncs designs from SuiNova to local files.",
     (yags) => configureSyncArgs(yags),
     (argv) => {
       handleError(
@@ -137,7 +137,7 @@ yargs
   )
   .command<FixImportsArgs>(
     "fix-imports",
-    "Fixes import paths after you've moved around Plasmic blackbox files",
+    "Fixes import paths after you've moved around SuiNova blackbox files",
     (yags) =>
       yags.option("skip-formatting", {
         type: "boolean",
@@ -152,13 +152,13 @@ yargs
     (yags) =>
       yags
         .option("host", {
-          describe: "Plasmic host to use",
+          describe: "SuiNova host to use",
           type: "string",
           default: HARDCODED_HOST,
         })
         .option("projects", {
           alias: "p",
-          describe: "ID of plasmic project to check",
+          describe: "ID of SuiNova project to check",
           type: "array",
           default: [],
         })
@@ -178,7 +178,7 @@ yargs
       yargs
         .option("project", {
           alias: "p",
-          describe: "ID of Plasmic project to upload the bundle to.",
+          describe: "ID of SuiNova project to upload the bundle to.",
           type: "string",
         })
         .option("bundleName", {
@@ -260,7 +260,7 @@ yargs
           type: "array",
         })
         .option("host", {
-          describe: "Plasmic host to use",
+          describe: "SuiNova host to use",
           type: "string",
           default: HARDCODED_HOST,
         })
@@ -366,7 +366,7 @@ function configureSyncArgs(
     })
     .option("skip-upgrade-check", {
       type: "boolean",
-      describe: "Skip upgrade check for Plasmic dependencies",
+      describe: "Skip upgrade check for SuiNova dependencies",
       default: false,
     })
     .option("metadata", {

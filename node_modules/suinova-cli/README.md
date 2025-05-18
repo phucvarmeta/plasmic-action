@@ -1,4 +1,4 @@
-Turn your Plasmic designs into components with the plasmic CLI!
+Turn your SuiNova designs into components with the SuiNova CLI!
 
 ### Quickstart
 
@@ -7,7 +7,7 @@ Turn your Plasmic designs into components with the plasmic CLI!
 npm install -g suinova-cli # Or: yarn global add suinova-cli
 
 # Run it!
-plasmic sync --projects yourPlasmicProjectId
+plasmic sync --projects yourSuiNovaProjectId
 ```
 
 ### Resources

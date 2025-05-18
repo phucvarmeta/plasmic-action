@@ -91,7 +91,6 @@ export const reactStrategy: CPAStrategy = {
     } else {
       // Delete existing App.tsx and related test
       deleteGlob(path.join(projectPath, "src", "App*"));
-      console.log("🚀 ~ projectPath:", projectPath);
 
       await runCodegenSync({
         projectId,

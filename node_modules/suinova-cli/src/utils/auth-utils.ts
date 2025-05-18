@@ -76,7 +76,7 @@ function authByPrompt(host: string) {
   const promise = inquirer.prompt([
     {
       name: "user",
-      message: "Your Plasmic user email",
+      message: "Your SuiNova user email",
     },
     {
       name: "token",
@@ -94,7 +94,7 @@ function authByPrompt(host: string) {
 
 export async function startAuth(opts: Partial<CommonArgs> & { host: string }) {
   if (opts.yes) {
-    throw new HandledError("Plasmic credentials could not be found.");
+    throw new HandledError("SuiNova credentials could not be found.");
   }
 
   const auth = await new Promise<AuthData>((resolve, reject) => {
@@ -112,7 +112,7 @@ export async function startAuth(opts: Partial<CommonArgs> & { host: string }) {
       `\nIf your browser doesn't automatically open, enter the following URL:\n${url}\n`
     );
 
-    logger.info(`Please log in and authorize Plasmic CLI.`);
+    logger.info(`Please log in and authorize SuiNova CLI.`);
     const polling = authByPolling(opts.host, initToken);
     polling.promise.then((auth) => {
       if (prompt) {
@@ -130,7 +130,7 @@ export async function startAuth(opts: Partial<CommonArgs> & { host: string }) {
       return;
     }
     const timeout = setTimeout(() => {
-      logger.info(`We haven't received an auth token from Plasmic yet.`);
+      logger.info(`We haven't received an auth token from SuiNova yet.`);
       prompt = authByPrompt(opts.host);
       prompt.promise
         .then((auth) => {
@@ -155,13 +155,13 @@ export async function startAuth(opts: Partial<CommonArgs> & { host: string }) {
   });
 
   logger.info(
-    `Successfully created Plasmic credentials file at ${newAuthFile}`
+    `Successfully created SuiNova credentials file at ${newAuthFile}`
   );
 }
 
 export function readAuth(authFile: string) {
   if (!existsBuffered(authFile)) {
-    throw new HandledError(`No Plasmic auth file found at ${authFile}`);
+    throw new HandledError(`No SuiNova auth file found at ${authFile}`);
   }
   try {
     const parsed = JSON.parse(readFileText(authFile)) as AuthConfig;
@@ -172,7 +172,7 @@ export function readAuth(authFile: string) {
     };
   } catch (e) {
     logger.error(
-      `Error encountered reading plasmic credentials at ${authFile}: ${e}`
+      `Error encountered reading SuiNova credentials at ${authFile}: ${e}`
     );
     throw e;
   }
@@ -188,7 +188,7 @@ export function getEnvAuth(): AuthConfig | undefined {
     // Try to give a hint if they partially entered a credential
     if (user || token) {
       logger.warn(
-        `Your Plasmic credentials were only partially set via environment variables. Try both ${ENV_AUTH_USER} and ${ENV_AUTH_TOKEN}`
+        `Your SuiNova credentials were only partially set via environment variables. Try both ${ENV_AUTH_USER} and ${ENV_AUTH_TOKEN}`
       );
     }
     return;
@@ -234,7 +234,7 @@ export async function getCurrentAuth(authPath?: string) {
 
 function failAuth() {
   throw new HandledError(
-    `Unable to authenticate Plasmic. Please run 'plasmic auth'.`
+    `Unable to authenticate SuiNova. Please run 'plasmic auth'.`
   );
 }
 

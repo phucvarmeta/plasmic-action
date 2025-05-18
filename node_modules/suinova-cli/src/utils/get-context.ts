@@ -414,7 +414,7 @@ async function maybeRunPlasmicInit(
   enableSkipAuth?: boolean
 ): Promise<boolean> {
   if (!process.env.QUIET) {
-    logger.info(`No ${missingFile} file found. Initializing plasmic...`);
+    logger.info(`No ${missingFile} file found. Initializing SuiNova...`);
   }
 
   await initPlasmic({

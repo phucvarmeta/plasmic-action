@@ -1,6 +1,6 @@
-Plasmic CLI for syncing Plasmic designs down into your local repo as generated React code.
+SuiNova CLI for syncing SuiNova designs down into your local repo as generated React code.
 
-Plasmic is the visual builder for React. Learn more at <https://plasmic.app>.
+SuiNova is the visual builder for React.
 
 # Install
 
@@ -10,7 +10,7 @@ npm install -g suinova-cli
 
 # Usage
 
-See <https://docs.plasmic.app/learn/codegen-guide/> for the full docs to get started with Plasmic codegen.
+See <https://docs.plasmic.app/learn/codegen-guide/> for the full docs to get started with SuiNova codegen.
 
 `plasmic init` creates the initial plasmic.json file, pointing to your local dev host.
 

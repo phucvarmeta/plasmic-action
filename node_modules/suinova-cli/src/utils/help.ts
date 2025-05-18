@@ -14,7 +14,7 @@ export function printFirstSyncInfo(context: PlasmicContext) {
   if (config.code.scheme === "blackbox" && config.projects.length > 0) {
     const project = ensure(L.last(config.projects));
     logger.info(
-      `\nYour Plasmic project "${project.projectName}" has now been synced to disk.`
+      `\nYour SuiNova project "${project.projectName}" has now been synced to disk.`
     );
     const exampleComponent = project.components[0];
     if (exampleComponent) {
@@ -25,7 +25,7 @@ ${chalk.bold("Using Plasmic Components")}
 ${chalk.bold("------------------------")}
 
 ${wrap(
-  `For each component, Plasmic generates two React components in two files.  For example, for component ${chalk.bold(
+  `For each component, SuiNova generates two React components in two files.  For example, for component ${chalk.bold(
     exampleComponent.name
   )}, there are:`
 )}
@@ -34,14 +34,14 @@ ${wrap(
           exampleComponent.renderModuleFilePath
         )}
 ${wrap(
-  `This is a blackbox, purely-presentational library component that you can use to render your designs.  This file is owned by Plasmic, and you should not edit it -- it will be overwritten when the component design is updated. This component should only be used by the "wrapper" component (below).`
+  `This is a blackbox, purely-presentational library component that you can use to render your designs.  This file is owned by SuiNova, and you should not edit it -- it will be overwritten when the component design is updated. This component should only be used by the "wrapper" component (below).`
 )}
 
 * A ${chalk.bold("wrapper")} component at ${chalk.bold.underline(
           exampleComponent.importSpec.modulePath
         )}
 ${wrap(
-  `This component is owned and edited by you to instantiate the Plasmic${exampleComponent.name} component with desired variants, states, event handlers, and data.  You have complete control over this file, and this is the actual component that should be used by the rest of the codebase.`
+  `This component is owned and edited by you to instantiate the SuiNova${exampleComponent.name} component with desired variants, states, event handlers, and data.  You have complete control over this file, and this is the actual component that should be used by the rest of the codebase.`
 )}
 
 Learn more at https://www.plasmic.app/learn/codegen-guide/
@@ -57,7 +57,7 @@ ${chalk.bold("Using Icons")}
 ${chalk.bold("-----------")}
 
 ${wrap(
-  `For each SVG icon, Plasmic also generates a React component. The component takes in all the usual props that you can pass to an svg element, and defaults to width/height of 1em.`
+  `For each SVG icon, SuiNova also generates a React component. The component takes in all the usual props that you can pass to an svg element, and defaults to width/height of 1em.`
 )}
 
 For example, for the ${chalk.bold(

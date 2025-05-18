@@ -11,7 +11,7 @@ export type AuthArgs = {
 
 export async function checkCredentials() {
   if (await getCurrentAuth()) {
-    logger.info("Plasmic credentials are ok.");
+    logger.info("SuiNova credentials are ok.");
     return;
   }
   throw new HandledError(

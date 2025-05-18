@@ -75,7 +75,7 @@ export async function initPlasmic(
   }
 
   const answer = await confirmWithUser(
-    "@plasmicapp/react-web is a small runtime required by Plasmic-generated code.\n  Do you want to add them now?",
+    "@plasmicapp/react-web is a small runtime required by SuiNova-generated code.\n  Do you want to add them now?",
     opts.yes
   );
   if (answer) {
@@ -258,7 +258,7 @@ async function deriveInitAnswers(
 
   logger.info(
     chalk.bold(
-      "Plasmic Express Setup -- Here are the default settings we recommend:\n"
+      "SuiNova Express Setup -- Here are the default settings we recommend:\n"
     )
   );
 
@@ -563,11 +563,11 @@ const INIT_ARGS_DESCRIPTION: {
       "What directory should React component files (that you edit) be put into?",
   },
   plasmicDir: {
-    shortDescription: "Plasmic-managed directory",
+    shortDescription: "SuiNova-managed directory",
     longDescription:
-      "Default directory to put Plasmic-managed files into; relative to src-dir",
+      "Default directory to put SuiNova-managed files into; relative to src-dir",
     question:
-      "What directory should Plasmic-managed files (that you should not edit) be put into?",
+      "What directory should SuiNova-managed files (that you should not edit) be put into?",
   },
   pagesDir: {
     shortDescription: "Pages directory",
