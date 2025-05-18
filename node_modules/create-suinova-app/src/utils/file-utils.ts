@@ -139,13 +139,17 @@ export async function generateRoutingCode(projectPath: string) {
     .join("\n");
 
   // Generate the complete App.tsx code
-  const appCode = `import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+  const appCode = `import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 ${imports}
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route
+          path="/"
+          element={<Navigate to="${routes[0].path}" />}
+        />
 ${routeElements}
         {/* Add more routes here as needed */}
       </Routes>
