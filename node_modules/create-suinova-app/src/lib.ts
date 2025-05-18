@@ -6,6 +6,7 @@ import {
   ensureTsconfig,
   generateRoutingCode,
   overwriteReadme,
+  updateViteFile,
 } from "./utils/file-utils";
 import { detectPackageManager } from "./utils/npm-utils";
 import { CPAStrategy } from "./utils/strategy";
@@ -159,6 +160,8 @@ export async function create(args: CreatePlasmicAppArgs): Promise<void> {
 
   // Overwrite README
   await overwriteReadme(resolvedProjectPath, platform, command);
+
+  await updateViteFile(resolvedProjectPath);
 
   // Generate routing code
   await generateRoutingCode(resolvedProjectPath);
