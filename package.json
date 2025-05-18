@@ -9,7 +9,8 @@
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "all": "yarn install && npm run build && npm run format",
-    "add-dist": "git add lib"
+    "add-dist": "git add lib",
+    "install-cli-cpa": "npm install create-suinova-app suinova-cli",
   },
   "pre-commit": [
     "format-check",
