@@ -214,6 +214,14 @@ async function ensureRequiredPackages(
   if (!suinovaNftBuilder) {
     await install("suinova-nft-builder", { global: false, dev: false });
   }
+  const chakraUi = findInstalledVersion(
+    context.config,
+    baseDir,
+    "@chakra-ui/react"
+  );
+  if (!chakraUi) {
+    await install("@chakra-ui/react", { global: false, dev: false });
+  }
 }
 
 /**
