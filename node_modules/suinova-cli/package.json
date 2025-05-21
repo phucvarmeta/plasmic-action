@@ -1,6 +1,6 @@
 {
   "name": "suinova-cli",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "SuiNova cli for syncing local code with SuiNova designs",
   "engines": {
     "node": ">=12"

@@ -206,6 +206,14 @@ async function ensureRequiredPackages(
   if (!antd5) {
     await install("@plasmicpkgs/antd5", { global: false, dev: false });
   }
+  const suinovaNftBuilder = findInstalledVersion(
+    context.config,
+    baseDir,
+    "suinova-nft-builder"
+  );
+  if (!suinovaNftBuilder) {
+    await install("suinova-nft-builder", { global: false, dev: false });
+  }
 }
 
 /**
@@ -619,8 +627,6 @@ async function syncProject(
       wrapPagesWithGlobalContexts: context.config.wrapPagesWithGlobalContexts,
     }
   );
-  logger.info("🚀 ~ projectBundle:", projectBundle);
-  logger.info("🚀 ~ projectBundle:", projectBundle.usedNpmPackages);
 
   // Convert from TSX => JSX
   if (context.config.code.lang === "js") {

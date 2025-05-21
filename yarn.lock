@@ -574,10 +574,10 @@ core-util-is@~1.0.0:
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-create-suinova-app@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.npmjs.org/create-suinova-app/-/create-suinova-app-0.0.14.tgz"
-  integrity sha512-Wp0p4zg13bX89t0QPE+2MBap4lZ1pY2f8ZlWr4SPFuqEOlYMOQcm04GVyQ/hafBej+42DJMtGkoAYydN+eb5bQ==
+create-suinova-app@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.npmjs.org/create-suinova-app/-/create-suinova-app-0.0.15.tgz"
+  integrity sha512-fuRzujY/HIOf0mg4Kyv8fxzN+66j8y5eX40ov/p5SuuomClWQ1XOJL1auoKmygWVFP+121mILyhVTYzimAn7Nw==
   dependencies:
     "@sentry/node" "^6.2.2"
     chalk "^4.1.0"
@@ -587,7 +587,7 @@ create-suinova-app@^0.0.14:
     inquirer "^8.0.0"
     lodash "^4.17.21"
     semver "^7.3.5"
-    suinova-cli "~0.0.1"
+    suinova-cli "~0.0.19"
     upath "^2.0.1"
     update-notifier "^5.1.0"
     validate-npm-package-name "^3.0.0"
@@ -1751,10 +1751,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
-suinova-cli@^0.0.19, suinova-cli@~0.0.1:
-  version "0.0.19"
-  resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.19.tgz"
-  integrity sha512-hAiO/ynaIeQTZTd/jUAyv9IKsNEBsKsCEwbJJ8S82HZTr6uenr3dmpQFOERCl48Agz/6pEJKsS3s8erzStp2bg==
+suinova-cli@^0.0.20, suinova-cli@~0.0.19:
+  version "0.0.20"
+  resolved "https://registry.npmjs.org/suinova-cli/-/suinova-cli-0.0.20.tgz"
+  integrity sha512-LSuAEw9Y+Xp0BqoBKScUr4sc/qD8e+4a9GPd4u4D+na4LzW49Lu3wHXxW/l0pvxlfvQcKG5bg8/Hlsa7pqWXBA==
 
 supports-color@^7.1.0:
   version "7.2.0"
