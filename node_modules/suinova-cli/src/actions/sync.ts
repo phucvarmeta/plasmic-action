@@ -116,7 +116,7 @@ async function ensureRequiredPackages(
   };
   const install = async (
     pkg: string,
-    opts: { global: boolean; dev: boolean }
+    opts: { global: boolean; dev: boolean; version?: string }
   ) => {
     const success = installUpgrade(context.config, pkg, baseDir, opts);
 
@@ -220,7 +220,11 @@ async function ensureRequiredPackages(
     "@chakra-ui/react"
   );
   if (!chakraUi) {
-    await install("@chakra-ui/react", { global: false, dev: false });
+    await install("@chakra-ui/react", {
+      global: false,
+      dev: false,
+      version: "2.8.1",
+    });
   }
 }
 

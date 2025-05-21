@@ -1,6 +1,6 @@
 {
   "name": "create-suinova-app",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Create SuiNova-powered React apps",
   "main": "./dist/lib.js",
   "types": "./dist/lib.d.ts",
@@ -32,7 +32,7 @@
     "@types/yargs": "^16.0.0"
   },
   "dependencies": {
-    "suinova-cli": "~0.0.21",
+    "suinova-cli": "~0.0.22",
     "@sentry/node": "^6.2.2",
     "chalk": "^4.1.0",
     "execa": "^5.0.0",

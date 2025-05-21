@@ -134,7 +134,7 @@ export function installUpgrade(
   config: PlasmicConfig,
   pkg: string,
   baseDir: string,
-  opts: { global?: boolean; dev?: boolean } = {}
+  opts: { global?: boolean; dev?: boolean; version?: string } = {}
 ) {
   const cmd = installCommand(config, pkg, baseDir, opts);
   if (!process.env.QUIET) {
@@ -162,41 +162,53 @@ export function installCommand(
   config: PlasmicConfig,
   pkg: string,
   baseDir: string,
-  opts: { global?: boolean; dev?: boolean } = {}
+  opts: { global?: boolean; dev?: boolean; version?: string } = {}
 ) {
   const mgr = detectPackageManager(config, baseDir);
   if (mgr === "yarn") {
     if (opts.global) {
-      return `yarn global add ${pkg}`;
+      return `yarn global add ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     } else if (opts.dev) {
-      return `yarn add --dev --ignore-scripts -W ${pkg}`;
+      return `yarn add --dev --ignore-scripts -W ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     } else {
-      return `yarn add --ignore-scripts -W ${pkg}`;
+      return `yarn add --ignore-scripts -W ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     }
   } else if (mgr === "yarn2") {
     if (opts.global) {
       // yarn2 does not support global.
-      return `npm install -g ${pkg}`;
+      return `npm install -g ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     } else if (opts.dev) {
-      return `yarn add -D ${pkg}`;
+      return `yarn add -D ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     } else {
-      return `yarn add ${pkg}`;
+      return `yarn add ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     }
   } else if (mgr === "pnpm") {
     if (opts.global) {
-      return `pnpm install -g ${pkg}`;
+      return `pnpm install -g ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     } else if (opts.dev) {
-      return `pnpm install --dev --ignore-scripts ${pkg}`;
+      return `pnpm install --dev --ignore-scripts ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     } else {
-      return `pnpm install --ignore-scripts ${pkg}`;
+      return `pnpm install --ignore-scripts ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     }
   } else {
     if (opts.global) {
-      return `npm install -g ${pkg}`;
+      return `npm install -g ${pkg}${opts.version ? `@${opts.version}` : ""}`;
     } else if (opts.dev) {
-      return `npm install --save-dev --ignore-scripts ${pkg}`;
+      return `npm install --save-dev --ignore-scripts ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     } else {
-      return `npm install --ignore-scripts ${pkg}`;
+      return `npm install --ignore-scripts ${pkg}${
+        opts.version ? `@${opts.version}` : ""
+      }`;
     }
   }
 }
