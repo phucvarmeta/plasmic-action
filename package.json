@@ -38,7 +38,7 @@
     "@sentry/tracing": "^6.2.5",
     "axios": "^1.9.0",
     "chalk": "^5.4.1",
-    "create-suinova-app": "^0.0.20",
+    "create-suinova-app": "^0.0.21",
     "logform": "2.4.0",
     "nanoid": "^3.1.22",
     "semver": "^7.4.0",
