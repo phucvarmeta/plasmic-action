@@ -4,7 +4,6 @@ import * as path from "upath";
 import validateProjectName from "validate-npm-package-name";
 import {
   ensureTsconfig,
-  generateRoutingCode,
   overwriteReadme,
   updateViteFile,
 } from "./utils/file-utils";
@@ -164,7 +163,7 @@ export async function create(args: CreatePlasmicAppArgs): Promise<void> {
   await updateViteFile(resolvedProjectPath);
 
   // Generate routing code
-  await generateRoutingCode(resolvedProjectPath);
+  // await generateRoutingCode(resolvedProjectPath);
 
   console.log("----------------------------------------");
   console.log(
